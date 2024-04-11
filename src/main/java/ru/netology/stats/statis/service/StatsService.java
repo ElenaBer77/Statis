@@ -41,9 +41,38 @@ public class StatsService {
         }
         return maxMonth + 1;
     }
-    //public int belowAverage(int[] sales){
-    // int av
+
+    public int monthsBelowAverage(int[] sales) {
+
+        int averageSale = averageSummSales(sales); //среднии продажи
+        int monthBelowAverage = 0; //переменная для счета месяцев ниже среднего
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] < averageSale) {
+                monthBelowAverage = monthBelowAverage + 1;
+            }
+        }
+        return monthBelowAverage;
+    }
+
+    public int monthsAboveAverage(int[] sales) {
+
+        int averageSale = averageSummSales(sales); //среднии продажи
+        int monthAboveAverage = 0; //переменная для счета месяцев ниже среднего
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > averageSale) {
+                monthAboveAverage = monthAboveAverage + 1;
+            }
+        }
+        return monthAboveAverage;
+    }
+
 }
+
+
+
+
+
+
 
 
 
