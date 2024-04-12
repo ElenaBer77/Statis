@@ -19,8 +19,8 @@ public class StatsServiceTest {
     public void sumOfAllSales() {
         StatsService service = new StatsService();
         int[] sales = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expectedSumSales = 180;
-        int actualSumSales = service.sumAllSales(sales);
+        long expectedSumSales = 180;
+        long actualSumSales = service.sumAllSales(sales);
         Assertions.assertEquals(expectedSumSales, actualSumSales);
     }
 
@@ -28,8 +28,8 @@ public class StatsServiceTest {
     public void averageSales() {
         StatsService service = new StatsService();
         int[] sales = new int[]{8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expectedAverageSales = 15;
-        int actualAverageSales = service.averageSummSales(sales);
+        long expectedAverageSales = 15;
+        long actualAverageSales = service.averageSummSales(sales);
         Assertions.assertEquals(expectedAverageSales, actualAverageSales);
     }
 

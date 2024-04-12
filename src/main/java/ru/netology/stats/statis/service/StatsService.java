@@ -14,21 +14,21 @@ public class StatsService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int sumAllSales(int[] sales) {
-        int sumSales = 0;
-        for (int sale : sales) {
+    public long sumAllSales(int[] sales) {
+        long sumSales = 0;
+        for (long sale : sales) {
             sumSales += sale;
         }
         return sumSales;
     }
 
-    public int averageSummSales(int[] sales) {
+    public long averageSummSales(int[] sales) {
         int numberMonths = sales.length; //количество месяцев: значений в массиве
-        int averageSal = 0;
-        for (int sale : sales) {
+        long averageSal = 0;
+        for (long sale : sales) {
             averageSal += sale;
         }
-        int averageSale = averageSal / numberMonths;
+        long averageSale = averageSal / numberMonths;
         return averageSale;
     }
 
@@ -44,7 +44,7 @@ public class StatsService {
 
     public int monthsBelowAverage(int[] sales) {
 
-        int averageSale = averageSummSales(sales); //среднии продажи
+        long averageSale = averageSummSales(sales); //среднии продажи
         int monthBelowAverage = 0; //переменная для счета месяцев ниже среднего
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < averageSale) {
@@ -56,7 +56,7 @@ public class StatsService {
 
     public int monthsAboveAverage(int[] sales) {
 
-        int averageSale = averageSummSales(sales); //среднии продажи
+        long averageSale = averageSummSales(sales); //среднии продажи
         int monthAboveAverage = 0; //переменная для счета месяцев ниже среднего
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > averageSale) {
