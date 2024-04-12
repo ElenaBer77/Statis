@@ -2,7 +2,7 @@ package ru.netology.stats.statis.service;
 
 public class StatsService {
 
-    public int minSales(int[] sales) {
+    public long minSales(long[] sales) {
         int minMonth = 0; // номер месяца с минимальными продажами среди просмотренных ранее
 
         for (int i = 0; i < sales.length; i++) {
@@ -14,7 +14,7 @@ public class StatsService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public long sumAllSales(int[] sales) {
+    public long sumAllSales(long[] sales) {
         long sumSales = 0;
         for (long sale : sales) {
             sumSales += sale;
@@ -22,7 +22,7 @@ public class StatsService {
         return sumSales;
     }
 
-    public long averageSummSales(int[] sales) {
+    public long averageSummSales(long[] sales) {
         int numberMonths = sales.length; //количество месяцев: значений в массиве
         long averageSal = 0;
         for (long sale : sales) {
@@ -32,7 +32,7 @@ public class StatsService {
         return averageSale;
     }
 
-    public int maxSales(int[] sales) {
+    public int maxSales(long[] sales) {
         int maxMonth = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] >= sales[maxMonth]) {
@@ -42,7 +42,7 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public int monthsBelowAverage(int[] sales) {
+    public int monthsBelowAverage(long[] sales) {
 
         long averageSale = averageSummSales(sales); //среднии продажи
         int monthBelowAverage = 0; //переменная для счета месяцев ниже среднего
@@ -54,7 +54,7 @@ public class StatsService {
         return monthBelowAverage;
     }
 
-    public int monthsAboveAverage(int[] sales) {
+    public int monthsAboveAverage(long[] sales) {
 
         long averageSale = averageSummSales(sales); //среднии продажи
         int monthAboveAverage = 0; //переменная для счета месяцев ниже среднего
